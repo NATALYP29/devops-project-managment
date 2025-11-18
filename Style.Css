@@ -1,1 +1,95 @@
+// Basic interactivity: mobile menu, pet modal, simple form handling
+document.addEventListener('DOMContentLoaded', () => {
+  // year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle?.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    if (mobileMenu) {
+      if (mobileMenu.hidden) mobileMenu.hidden = false;
+      else mobileMenu.hidden = true;
+    }
+  });
+
+  // Pet modal
+  const petGrid = document.getElementById('petGrid');
+  const petModal = document.getElementById('petModal');
+  const modalImg = document.getElementById('modalImg');
+  const petModalTitle = document.getElementById('petModalTitle');
+  const petMeta = document.getElementById('petMeta');
+  const petDesc = document.getElementById('petDesc');
+  const closeBtn = petModal.querySelector('.modal-close');
+
+  function openModalFromCard(card){
+    const name = card.dataset.name || 'Pet';
+    const age = card.dataset.age || '';
+    const type = card.dataset.type || '';
+    const breed = card.dataset.breed || '';
+    const desc = card.dataset.desc || '';
+    const img = card.querySelector('img')?.src || '';
+
+    petModal.setAttribute('aria-hidden','false');
+    petModal.style.display = 'flex';
+    modalImg.src = img;
+    modalImg.alt = name;
+    petModalTitle.textContent = name;
+    petMeta.textContent = `${type} • ${age} ${breed ? '• ' + breed : ''}`;
+    petDesc.textContent = desc;
+    // focus management
+    closeBtn.focus();
+  }
+
+  function closeModal(){
+    petModal.setAttribute('aria-hidden','true');
+    petModal.style.display = 'none';
+  }
+
+  petGrid?.addEventListener('click', (e) => {
+    const card = e.target.closest('.pet-card');
+    if (card) openModalFromCard(card);
+  });
+
+  // allow keyboard to open card (Enter)
+  petGrid?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const card = e.target.closest('.pet-card');
+      if (card) openModalFromCard(card);
+    }
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+  petModal?.addEventListener('click', (e) => {
+    if (e.target === petModal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Donation CTA buttons: just scroll to contact (could open payment flow)
+  document.querySelectorAll('#donateBtn, #donateOpenBtn, #donateOpenBtn, #donateOpenBtn').forEach(btn => {
+    btn?.addEventListener('click', () => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}));
+  });
+
+  // Simple contact form handling (client-side)
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  contactForm?.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const form = ev.target;
+    if (!form.checkValidity()) {
+      formStatus.textContent = 'Please complete the required fields.';
+      formStatus.style.color = 'crimson';
+      return;
+    }
+    // simulate sending (in Codespaces you would wire to server or Netlify functions)
+    formStatus.style.color = 'green';
+    formStatus.textContent = 'Thanks! Your message was sent. We will reply by email.';
+    form.reset();
+  });
+});
 
