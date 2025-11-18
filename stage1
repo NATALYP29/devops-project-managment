@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loved My Pets — Adopt • Volunteer • Donate</title>
+  <meta name="description" content="Loved My Pets: an animal shelter helping pets find loving homes. See adoptable animals, learn how to help, and get in touch." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Loved My Pets home">
+        <!-- simple paw SVG logo -->
+        <svg width="48" height="48" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12 5.5A1.75 1.75 0 1 0 12 2a1.75 1.75 0 0 0 0 3.5zM7 7.8A1.4 1.4 0 1 0 7 5a1.4 1.4 0 0 0 0 2.8zM17 7.8A1.4 1.4 0 1 0 17 5a1.4 1.4 0 0 0 0 2.8zM5.5 12A1.5 1.5 0 1 0 5.5 9a1.5 1.5 0 0 0 0 3zM18.5 12A1.5 1.5 0 1 0 18.5 9a1.5 1.5 0 0 0 0 3zM12 22c-1.9 0-3.5-1.2-4.1-2.9C6.6 17.6 6 16.6 6 15.5 6 12.6 8.6 10 11.5 10S17 12.6 17 15.5c0 1.1-.6 2.1-1.9 3.6C15.5 20.8 13.9 22 12 22z"/>
+        </svg>
+        <span class="site-title">Loved My Pets</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#adopt">Adopt</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#help">Help</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="donateBtn" class="btn primary" aria-haspopup="dialog">Donate</button>
+      <button id="menuToggle" class="menu-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a href="#adopt">Adopt</a>
+      <a href="#about">About</a>
+      <a href="#help">Help</a>
+      <a href="#contact">Contact</a>
+      <a href="#donate" class="btn primary">Donate</a>
+    </div>
+  </header>
+
+  <main id="home" class="container" role="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Find a friend. Save a life.</h1>
+        <p class="lead">Loved My Pets rescues animals and connects them with loving families. Browse adoptable pets, volunteer, or donate to support our shelter.</p>
+        <div class="hero-ctas">
+          <a href="#adopt" class="btn primary">See Pets for Adoption</a>
+          <a href="#help" class="btn ghost">How to Help</a>
+        </div>
+      </div>
+      <figure class="hero-img" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1558944351-d7f7a2d8c0b4?w=1200&q=80&auto=format&fit=crop" alt="A smiling person hugging a dog" />
+      </figure>
+    </section>
+
+    <!-- ADOPTABLE PETS -->
+    <section id="adopt" class="adopt section" aria-labelledby="adopt-title">
+      <div class="section-header">
+        <h2 id="adopt-title">Adoptable Pets</h2>
+        <p>Meet some of the pets currently waiting for their forever homes. Click any card to learn more and start the adoption process.</p>
+      </div>
+
+      <div class="pet-grid" id="petGrid" aria-live="polite">
+        <!-- Example pet cards. Replace images and data with real shelter data -->
+        <article class="pet-card" data-name="Maya" data-age="2 years" data-type="Dog" data-breed="Mixed" data-desc="Playful, loves walks and cuddles. Good with older kids." tabindex="0" role="button" aria-pressed="false">
+          <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800&q=60&auto=format&fit=crop" alt="Maya the dog" />
+          <div class="pet-info">
+            <h3>Maya</h3>
+            <p class="meta">Dog • 2 years</p>
+            <p class="short">Playful, loves walks and cuddles.</p>
+            <div class="card-actions">
+              <button class="btn small view-btn">View</button>
+              <a class="btn small ghost" href="#contact">Start Adoption</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card" data-name="Whiskers" data-age="1 year" data-type="Cat" data-breed="Domestic Short Hair" data-desc="Calm, indoor cat that likes feather toys." tabindex="0" role="button" aria-pressed="false">
+          <img src="https://images.unsplash.com/photo-1518797911216-43db6b6a79a7?w=800&q=60&auto=format&fit=crop" alt="Whiskers the cat" />
+          <div class="pet-info">
+            <h3>Whiskers</h3>
+            <p class="meta">Cat • 1 year</p>
+            <p class="short">Calm, indoor cat that likes feather toys.</p>
+            <div class="card-actions">
+              <button class="btn small view-btn">View</button>
+              <a class="btn small ghost" href="#contact">Start Adoption</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pet-card" data-name="Benny" data-age="4 years" data-type="Dog" data-breed="Beagle" data-desc="Curious and energetic. Loves scent games and company." tabindex="0" role="button" aria-pressed="false">
+          <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?w=800&q=60&auto=format&fit=crop" alt="Benny the beagle" />
+          <div class="pet-info">
+            <h3>Benny</h3>
+            <p class="meta">Dog • 4 years</p>
+            <p class="short">Curious and energetic. Loves scent games.</p>
+            <div class="card-actions">
+              <button class="btn small view-btn">View</button>
+              <a class="btn small ghost" href="#contact">Start Adoption</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more pet cards as needed -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title">About Loved My Pets</h2>
+        <p>We rescue, rehabilitate, and rehome animals from our local community. Our team of volunteers and staff provide medical care, behavior support, and adoption services.</p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h3>Our Mission</h3>
+          <p>To provide loving shelter, medical care, and adoption services so every pet has a chance for a safe home.</p>
+        </div>
+        <div>
+          <h3>What We Do</h3>
+          <ul>
+            <li>Rescue and medical care</li>
+            <li>Behavioral assessments and training</li>
+            <li>Community outreach & education</li>
+            <li>Volunteer and foster programs</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Hours & Location</h3>
+          <p>Open Tue–Sat, 10am–4pm.<br>123 Pet Lane, Your City, State</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HELP / CTA -->
+    <section id="help" class="section help" aria-labelledby="help-title">
+      <h2 id="help-title">How You Can Help</h2>
+      <div class="help-cards">
+        <div class="help-card">
+          <h4>Adopt</h4>
+          <p>Give a pet a forever home. Fill out an adoption application to get started.</p>
+          <a href="#contact" class="btn">Adoption Application</a>
+        </div>
+        <div class="help-card">
+          <h4>Volunteer</h4>
+          <p>Join our team to help with care, events, social media, and more.</p>
+          <a href="#contact" class="btn ghost">Volunteer</a>
+        </div>
+        <div class="help-card">
+          <h4>Donate</h4>
+          <p>Your donations pay for food, medical care, and shelter supplies.</p>
+          <button id="donateOpenBtn" class="btn primary">Donate Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FORM -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="section-header">
+        <h2 id="contact-title">Contact & Support</h2>
+        <p>Questions about adoption, volunteering, or donations? Send us a message.</p>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate aria-describedby="formNote">
+        <div id="formNote" class="sr-only">All fields required unless noted</div>
+
+        <label>
+          Your name
+          <input type="text" name="name" required minlength="2" placeholder="Your full name">
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="4" required placeholder="Tell us how we can help"></textarea>
+        </label>
+
+        <label>
+          I want to:
+          <select name="interest" required>
+            <option value="">Choose one</option>
+            <option>Adopt</option>
+            <option>Volunteer</option>
+            <option>Donate</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send Message</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+
+        <div id="formStatus" aria-live="polite" class="form-status"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- PET DETAILS MODAL -->
+  <div id="petModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="petModalTitle">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="">
+        <div class="modal-info">
+          <h3 id="petModalTitle">Pet Name</h3>
+          <p class="meta" id="petMeta">Type • Age</p>
+          <p id="petDesc">Description</p>
+          <div class="modal-actions">
+            <a href="#contact" class="btn">Start Adoption</a>
+            <button id="modalVolunteer" class="btn ghost">Volunteer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <p>&copy; <span id="year"></span> Loved My Pets. All rights reserved.</p>
+        <p class="muted">Non-profit organization • EIN: 12-3456789</p>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Twitter">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
